@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter modern 3D design',
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
   }
@@ -18,10 +18,6 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Flutter modern 3D design'),
-      ),
       body: Center(
         child: Container(
           width: 200,
@@ -45,6 +41,24 @@ class MyHomePage extends StatelessWidget {
                 spreadRadius: 1.0,
               ),
             ],
+            gradient: LinearGradient(
+              // begin point
+              begin: Alignment.topLeft,
+              // end point
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.grey[200],
+                Colors.grey[300],
+                Colors.grey[400],
+                Colors.grey[500],
+              ],
+              stops: [
+                0.1,
+                0.3,
+                0.8,
+                1,
+              ],
+            ),
           ),
           child: Icon(
             Icons.android,
